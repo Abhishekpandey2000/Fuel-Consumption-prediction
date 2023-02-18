@@ -1,46 +1,72 @@
 import numpy as np
+import pandas as pd
 import pickle as pk
 import streamlit as st
-from sklearn.preprocessing import MinMaxScaler
-
-sc = MinMaxScaler()
 
 loaded_model = pk.load(
-    open("trained_model.sav", "rb"))
+    open("trained_model_rf.sav","rb"))
+scaled_data = pk.load(
+    open("scaled_data.sav","rb"))
 
 
-def hpp(input_data):
-    # input_data = (4.98, 2.31, 0.538, 15.3, 6.575, 296, 4.09, 65)
-    arr = np.asarray(input_data)
+def input_converter(inp):
+    vcl = ['Two-seater', 'Minicompact', 'Compact', 'Subcompact', 'Mid-size', 'Full-size', 'SUV: Small', 'SUV: Standard',
+           'Minivan', 'Station wagon: Small', 'Station wagon: Mid-size', 'Pickup truck: Small',
+           'Special purpose vehicle', 'Pickup truck: Standard']
+    trans = ['AV', 'AM', 'M', 'AS', 'A']
+    fuel = ["D", "E", "X", "Z"]
+    lst = []
+    for i in range(6):
+        if (type(inp[i]) == str):
+            if (inp[i] in vcl):
+                lst.append(vcl.index(inp[i]))
+            elif (inp[i] in trans):
+                lst.append(trans.index(inp[i]))
+            elif (inp[i] in fuel):
+                if (fuel.index(inp[i]) == 0):
+                    lst.extend([1, 0, 0, 0])
+                    break
+                elif (fuel.index(inp[i]) == 1):
+                    lst.extend([0, 1, 0, 0])
+                    break
+                elif (fuel.index(inp[i]) == 2):
+                    lst.extend([0, 0, 1, 0])
+                    break
+                elif (fuel.index(inp[i]) == 3):
+                    lst.extend([0, 0, 0, 1])
+        else:
+            lst.append(inp[i])
+
+    arr = np.asarray(lst)
     arr = arr.reshape(1, -1)
-    ar = sc.fit_transform(arr)
+    arr = scaled_data.transform(arr)
+    prediction = loaded_model.predict(arr)
 
-    prediction = loaded_model.predict(ar)
-    return(f"The Median value of owner-occupied homes in $1000's is {round(prediction[0],2)}")
+    return (f"The Fuel Consumption L/100km is {round(prediction[0], 2)}")
+
+
 
 
 
 def main():
     # giving a title
-    st.title("Housing Price Prediction System")
+    st.title("Fuel Consumption Prediction WebApp")
 
     # getting the input data from user
     result = 0
 
-    lstat = st.text_input("% of lower class population around")
-    indus = st.text_input("proportion of non-retail business acres per town")
-    nox = st.text_input("nitric oxides concentration (parts per 10 million)")
-    ptratio = st.text_input("pupil-teacher ratio by town")
-    rm = st.text_input("average number of rooms per dwelling")
-    tax = st.text_input("full-value property-tax rate per $10,000")
-    dis = st.text_input("weighted distances to five city employment centres")
-    age = st.text_input("proportion of owner-occupied units built prior to 1940")
+    Vehicle_class = st.text_input("Enter Vehicle class")
+    Engine_size = st.number_input("Enter Engine Size")
+    Cylinders = st.number_input("Enter number of Cylinders")
+    Transmission = st.text_input("Enter Transmission type without number of gears")
+    Co2_Rating = st.number_input("Enter CO2 Rating")
+    Fuel_type = st.text_input("Enter Fuel type (D, E, X, Z)")
 
     # code for prediction
 
     # creating a button for prediction
-    if st.button("Predict MEDV"):
-        result = hpp([lstat, indus, nox, ptratio, rm, tax, dis, age])
+    if st.button("Predict"):
+        result = input_converter([Vehicle_class,Engine_size,Cylinders,Transmission,Co2_Rating,Fuel_type])
 
     st.success(result)
 
