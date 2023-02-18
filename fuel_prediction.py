@@ -55,13 +55,14 @@ def main():
     # getting the input data from user
     result = 0
     vehicle = ['Two-seater','Minicompact','Compact','Subcompact','Mid-size','Full-size','SUV: Small','SUV: Standard','Minivan','Station wagon: Small','Station wagon: Mid-size','Pickup truck: Small','Special purpose vehicle','Pickup truck: Standard']
+    transmission = ['AV', 'AM', 'M', 'AS', 'A']
+    fuel = ["D", "E", "X", "Z"]
     Vehicle_class = st.selectbox("Select the vehicle class",vehicle)
-    st.write(f'you selected{Vehicle_class}')
     Engine_size = st.number_input("Enter Engine Size")
     Cylinders = st.number_input("Enter number of Cylinders")
-    Transmission = st.text_input("Enter Transmission type without number of gears")
+    Transmission = st.selectbox("Select the Transmission",transmission)
     Co2_Rating = st.number_input("Enter CO2 Rating")
-    Fuel_type = st.text_input("Enter Fuel type (D, E, X, Z)")
+    Fuel_type = st.selectbox("Select the Transmission",fuel)
 
     # code for prediction
 
