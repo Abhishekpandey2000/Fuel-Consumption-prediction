@@ -55,12 +55,12 @@ def main():
     # getting the input data from user
     result = 0
 
-    Vehicle_class = st.text_input("Enter Vehicle class").title()
+    Vehicle_class = st.text_input("Enter Vehicle class")
     Engine_size = st.number_input("Enter Engine Size")
     Cylinders = st.number_input("Enter number of Cylinders")
-    Transmission = st.text_input("Enter Transmission type without number of gears").upper()
+    Transmission = st.text_input("Enter Transmission type without number of gears")
     Co2_Rating = st.number_input("Enter CO2 Rating")
-    Fuel_type = st.text_input("Enter Fuel type (D, E, X, Z)").upper()
+    Fuel_type = st.text_input("Enter Fuel type (D, E, X, Z)")
 
     # code for prediction
 
