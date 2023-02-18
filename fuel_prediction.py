@@ -54,8 +54,9 @@ def main():
 
     # getting the input data from user
     result = 0
-
-    Vehicle_class = st.text_input("Enter Vehicle class")
+    vehicle = ['Two-seater','Minicompact','Compact','Subcompact','Mid-size','Full-size','SUV: Small','SUV: Standard','Minivan','Station wagon: Small','Station wagon: Mid-size','Pickup truck: Small','Special purpose vehicle','Pickup truck: Standard']
+    Vehicle_class = st.selectbox("Select the vehicle class",vehicle)
+    st.write(f'you selected{Vehicle_class}')
     Engine_size = st.number_input("Enter Engine Size")
     Cylinders = st.number_input("Enter number of Cylinders")
     Transmission = st.text_input("Enter Transmission type without number of gears")
