@@ -62,7 +62,7 @@ def main():
     Cylinders = st.number_input("Enter number of Cylinders")
     Transmission = st.selectbox("Select the Transmission",transmission)
     Co2_Rating = st.number_input("Enter CO2 Rating")
-    Fuel_type = st.selectbox("Select the Transmission",fuel)
+    Fuel_type = st.selectbox("Select the Fuel type",fuel)
 
     # code for prediction
 
