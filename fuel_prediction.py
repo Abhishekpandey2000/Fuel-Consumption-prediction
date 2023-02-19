@@ -67,7 +67,7 @@ def main():
     # code for prediction
 
     # creating a button for prediction
-    if st.button("Predict"):
+    if st.button("Predict 🔍"):
         result = input_converter([Vehicle_class,Engine_size,Cylinders,Transmission,Co2_Rating,Fuel_type])
 
     st.success(result)
