@@ -52,7 +52,7 @@ def main():
     # giving a title    
     _left, mid, _right = st.columns(3)
     with mid:
-       st.image("output-onlinegiftools.gif")
+       st.image("output-onlinegiftools.gif",width=100)
     st.markdown("<h1 style='text-align: center; color: red;'>Fuel Consumption Prediction</h1>", unsafe_allow_html=True)
 #     st.title(":red[Fuel Consumption Prediction WebApp]")
     # getting the input data from user
