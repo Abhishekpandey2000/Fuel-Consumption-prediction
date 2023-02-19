@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import pickle as pk
 import streamlit as st
+import base64
 
 loaded_model = pk.load(
     open("trained_model_rf.sav","rb"))
@@ -49,7 +50,15 @@ def input_converter(inp):
 
 def main():
     # giving a title
-    st.markdown('<img src="./output-onlinegiftools.gif"/>', unsafe_allow_html=True)
+    file_ = open("output-onlinegiftools.gif", "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
+
+    st.markdown(
+        f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+        unsafe_allow_html=True,
+    )    
     st.title(":red[Fuel Consumption Prediction WebApp]")
 
     # getting the input data from user
