@@ -8,7 +8,6 @@ loaded_model = pk.load(
 scaled_data = pk.load(
     open("scaled_data.sav","rb"))
 
-
 def input_converter(inp):
     vcl = ['Two-seater', 'Minicompact', 'Compact', 'Subcompact', 'Mid-size', 'Full-size', 'SUV: Small', 'SUV: Standard',
            'Minivan', 'Station wagon: Small', 'Station wagon: Mid-size', 'Pickup truck: Small',
@@ -50,7 +49,8 @@ def input_converter(inp):
 
 def main():
     # giving a title
-    st.title("Fuel Consumption Prediction WebApp")
+    st.markdown('<img src="./output-onlinegiftools.gif"/>', unsafe_allow_html=True)
+    st.title(":red[Fuel Consumption Prediction WebApp]")
 
     # getting the input data from user
     result = 0
