@@ -54,31 +54,30 @@ def main():
     with mid:
        st.image("output-onlinegiftools.gif")
     st.markdown("<h1 style='text-align: center; color: red;'>Fuel Consumption Prediction</h1>", unsafe_allow_html=True)
-#     st.title(":red[Fuel Consumption Prediction WebApp]")
-    # getting the input data from user
     
+    @st.cache(allow_output_mutation=True)
+    def get_base64_of_bin_file(bin_file):
+        with open(bin_file, 'rb') as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
 
-@st.cache(allow_output_mutation=True)
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+    def set_png_as_page_bg(png_file):
+        bin_str = get_base64_of_bin_file(png_file)
+        page_bg_img = '''
+        <style>
+        body {
+        background-image: url("data:image/png;base64,%s");
+        background-size: cover;
+        }
+        </style>
+        ''' % bin_str
 
-def set_png_as_page_bg(png_file):
-    bin_str = get_base64_of_bin_file(png_file)
-    page_bg_img = '''
-    <style>
-    body {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
-    }
-    </style>
-    ''' % bin_str
+        st.markdown(page_bg_img, unsafe_allow_html=True)
+        return
+
+    set_png_as_page_bg('download.jpeg')
     
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
-
-set_png_as_page_bg('download.jpeg')
+    # getting the input data from user    
     result = 0
     vehicle = ['Two-seater','Minicompact','Compact','Subcompact','Mid-size','Full-size','SUV: Small','SUV: Standard','Minivan','Station wagon: Small','Station wagon: Mid-size','Pickup truck: Small','Special purpose vehicle','Pickup truck: Standard']
     transmission = ['AV', 'AM', 'M', 'AS', 'A']
