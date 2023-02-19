@@ -53,7 +53,8 @@ def main():
     _left, mid, _right = st.columns(3)
     with mid:
        st.image("output-onlinegiftools.gif")
-    st.title(":red[Fuel Consumption Prediction WebApp]")
+    st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
+#     st.title(":red[Fuel Consumption Prediction WebApp]")
     # getting the input data from user
     result = 0
     vehicle = ['Two-seater','Minicompact','Compact','Subcompact','Mid-size','Full-size','SUV: Small','SUV: Standard','Minivan','Station wagon: Small','Station wagon: Mid-size','Pickup truck: Small','Special purpose vehicle','Pickup truck: Standard']
