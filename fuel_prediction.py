@@ -100,7 +100,7 @@ def main():
     
     _left, mid, _right = st.columns(3)
     with mid:
-       st.image("output-onlinegiftools.gif",width = 150)
+       st.image("output-onlinegiftools.gif")
     
     st.markdown("<h1 style='text-align: center; color: red;'>Fuel Consumption Prediction</h1>", unsafe_allow_html=True)
     
