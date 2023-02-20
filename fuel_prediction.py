@@ -18,7 +18,7 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 
 with st.sidebar:
-    st.["element_name"]
+    st.[element_name]
 
 img = get_img_as_base64("image.jpg")
 
