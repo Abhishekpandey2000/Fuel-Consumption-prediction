@@ -109,9 +109,11 @@ def main():
     vehicle = ['Two-seater','Minicompact','Compact','Subcompact','Mid-size','Full-size','SUV: Small','SUV: Standard','Minivan','Station wagon: Small','Station wagon: Mid-size','Pickup truck: Small','Special purpose vehicle','Pickup truck: Standard']
     transmission = ['AV', 'AM', 'M', 'AS', 'A']
     fuel = ["D", "E", "X", "Z"]
+    Cylinders = [ 4, 6, 8, 12, 10, 5, 16, 3]
+    
     Vehicle_class = st.selectbox("Select the vehicle class",vehicle)
     Engine_size = st.number_input("Enter Engine Size (please enter value in this range[1-7])")
-    Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16]",min_value = 1, max_value = 16)
+    Cylinders = st.selectbox("Enter number of Cylinders (please enter value in this range[1-16]",Cylinders)
     Transmission = st.selectbox("Select the Transmission",transmission)
     Co2_Rating = st.number_input("Enter CO2 Rating (please enter value in this range[1-10]",min_value = 1, max_value = 10)
     Fuel_type = st.selectbox("Select the Fuel type",fuel)
