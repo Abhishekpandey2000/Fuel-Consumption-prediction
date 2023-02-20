@@ -17,20 +17,22 @@ def get_img_as_base64(file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-with st.sidebar:
+# with st.sidebar:
 #     with st.echo():
 #         st.write("hello.")
 
 #     with st.spinner("Loading..."):
 #         time.sleep(1)
 #     st.success("Done!")
+    
+    
 
 img = get_img_as_base64("image.jpg")
 
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf_E3V1THqjF1EBlz_pdjLLtqVaoZsjZBWzA&usqp=CAU");
+background-image: url("https://images.unsplash.com/photo-1501426026826-31c667bdf23d");
 background-size: 180%;
 background-position: top left;
 background-repeat: no-repeat;
