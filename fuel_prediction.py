@@ -32,7 +32,7 @@ img = get_img_as_base64("image.jpg")
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAEiL7BqNDjX5vcUZZI6Ip_Tc0MsyDlcV12g&usqp=CAU");
+background-image: url("https://wallpaperaccess.com/full/2055282.jpg");
 background-size: 180%;
 background-position: top left;
 background-repeat: no-repeat;
