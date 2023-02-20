@@ -113,7 +113,7 @@ def main():
     
     Vehicle_class = st.selectbox("Select the vehicle class",vehicle)
     Engine_size = st.number_input("Enter Engine Size (please enter value in this range[1-7])")
-    Cylinders = st.selectbox("Enter number of Cylinders (please enter value in this range[1-16]",Cylinders)
+    Cylinders = st.selectbox("Select the number of Cylinders",Cylinders)
     Transmission = st.selectbox("Select the Transmission",transmission)
     Co2_Rating = st.number_input("Enter CO2 Rating (please enter value in this range[1-10]",min_value = 1, max_value = 10)
     Fuel_type = st.selectbox("Select the Fuel type",fuel)
