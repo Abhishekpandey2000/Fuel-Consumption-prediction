@@ -97,25 +97,18 @@ def input_converter(inp):
 
 def main():
     # giving a title    
+    st.markdown("<h1 style='text-align: center; color: red;'>Fuel Consumption Prediction</h1>", unsafe_allow_html=True)
+    
+    
     _left, mid, _right = st.columns(3)
     with mid:
        st.image("output-onlinegiftools.gif")
-    st.markdown("<h1 style='text-align: center; color: red;'>Fuel Consumption Prediction</h1>", unsafe_allow_html=True)        
+    
     # getting the input data from user    
     result = 0
     vehicle = ['Two-seater','Minicompact','Compact','Subcompact','Mid-size','Full-size','SUV: Small','SUV: Standard','Minivan','Station wagon: Small','Station wagon: Mid-size','Pickup truck: Small','Special purpose vehicle','Pickup truck: Standard']
     transmission = ['AV', 'AM', 'M', 'AS', 'A']
     fuel = ["D", "E", "X", "Z"]
-    
-    css = '''
-        <style>
-            .stSelectbox [data-testid='stMarkdownContainer'] {
-                color: white;
-            }
-            
-        </style>
-    '''
-    st.write(css, unsafe_allow_html=True)
     Vehicle_class = st.selectbox("Select the vehicle class",vehicle)
     Engine_size = st.number_input("Enter Engine Size (please enter value in this range[1-7])")
     Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16]",min_value = 1, max_value = 16)
