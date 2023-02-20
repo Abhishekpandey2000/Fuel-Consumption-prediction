@@ -18,7 +18,12 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 
 with st.sidebar:
-    st.[element_name]
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
+
+    with st.spinner("Loading..."):
+        time.sleep(5)
+    st.success("Done!")
 
 img = get_img_as_base64("image.jpg")
 
