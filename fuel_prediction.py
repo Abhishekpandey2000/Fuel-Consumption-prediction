@@ -3,11 +3,50 @@ import pandas as pd
 import pickle as pk
 import streamlit as st
 import base64
+from streamlit.components.v1 import html
+
 
 loaded_model = pk.load(
     open("trained_model_rf.sav","rb"))
 scaled_data = pk.load(
     open("scaled_data.sav","rb"))
+
+@st.experimental_memo
+def get_img_as_base64(file):
+    with open(file, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+
+img = get_img_as_base64("image.jpg")
+
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf_E3V1THqjF1EBlz_pdjLLtqVaoZsjZBWzA&usqp=CAU");
+background-size: 180%;
+background-position: top left;
+background-repeat: no-repeat;
+background-attachment: local;
+position: absolute;
+}}
+[data-testid="stSidebar"] > div:first-child {{
+background-image: url("data:image/png;base64,{img}");
+background-position: center; 
+background-repeat: no-repeat;
+background-attachment: fixed;
+}}
+[data-testid="stHeader"] {{
+background: rgba(0,0,0,0);
+}}
+[data-testid="stToolbar"] {{
+right: 2rem;
+}}
+</style>
+"""
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 
 def input_converter(inp):
     vcl = ['Two-seater', 'Minicompact', 'Compact', 'Subcompact', 'Mid-size', 'Full-size', 'SUV: Small', 'SUV: Standard',
