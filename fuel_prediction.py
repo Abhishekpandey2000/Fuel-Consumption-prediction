@@ -5,11 +5,13 @@ import streamlit as st
 import base64
 from streamlit.components.v1 import html
 
-
 loaded_model = pk.load(
     open("trained_model_rf.sav","rb"))
 scaled_data = pk.load(
     open("scaled_data.sav","rb"))
+
+
+
 
 @st.experimental_memo
 def get_img_as_base64(file):
@@ -17,15 +19,6 @@ def get_img_as_base64(file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-# with st.sidebar:
-#     with st.echo():
-#         st.write("hello.")
-
-#     with st.spinner("Loading..."):
-#         time.sleep(1)
-#     st.success("Done!")
-    
-    
 
 img = get_img_as_base64("image.jpg")
 
@@ -38,6 +31,7 @@ background-position: top left;
 background-repeat: no-repeat;
 background-attachment: local;
 }}
+
 [data-testid="stSidebar"] > div:first-child {{
 background-image: url("data:image/png;base64,{img}");
 background-position: center; 
@@ -54,6 +48,10 @@ right: 2rem;
 """
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
+
+
 
 
 def input_converter(inp):
@@ -96,34 +94,60 @@ def input_converter(inp):
 
 
 def main():
-    # giving a title
     
+    # giving a title    
     _left, mid, _right = st.columns(3)
     with mid:
-       st.image("new_meter.gif")
-    
-    st.markdown("<h1 style='text-align: center; color: red;'>Fuel Consumption Prediction</h1>", unsafe_allow_html=True)
-    
+       st.image("output-onlinegiftools.gif")
+    st.markdown("<h1 style='text-align: center; color: red;'>Fuel Consumption Prediction</h1>", unsafe_allow_html=True)        
     # getting the input data from user    
     result = 0
     vehicle = ['Two-seater','Minicompact','Compact','Subcompact','Mid-size','Full-size','SUV: Small','SUV: Standard','Minivan','Station wagon: Small','Station wagon: Mid-size','Pickup truck: Small','Special purpose vehicle','Pickup truck: Standard']
     transmission = ['AV', 'AM', 'M', 'AS', 'A']
     fuel = ["D", "E", "X", "Z"]
-    Cylinders = [ 4, 6, 8, 12, 10, 5, 16, 3]
     
-    Vehicle_class = st.selectbox("Select the vehicle class",vehicle)
+
+    Vehicle_class = st.selectbox(label = "Enter Vehicle class",options = vehicle)
+    
+    css = """
+        <style>
+            .stSelectbox [data-testid='stMarkdownContainer'] {
+                color: white;
+            }
+            
+        </style>
+    """
+
+    st.write(css, unsafe_allow_html=True)
+    
+    
     Engine_size = st.number_input("Enter Engine Size (please enter value in this range[1-7])")
-    Cylinders = st.selectbox("Select the number of Cylinders",Cylinders)
+    css = """
+        <style>
+           .stNumberInput [data-testid='stMarkdownContainer'] {
+                color: white;
+                
+            }
+            
+        </style>
+    """
+    
+    st.write(css, unsafe_allow_html=True)
+    
+    Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16]",min_value = 1, max_value = 16)
     Transmission = st.selectbox("Select the Transmission",transmission)
     Co2_Rating = st.number_input("Enter CO2 Rating (please enter value in this range[1-10]",min_value = 1, max_value = 10)
     Fuel_type = st.selectbox("Select the Fuel type",fuel)
+
     # code for prediction
 
     # creating a button for prediction
     if st.button("Predict 🔍"):
         result = input_converter([Vehicle_class,Engine_size,Cylinders,Transmission,Co2_Rating,Fuel_type])
-        markdown_text = f"<h2><b>{result}</b>!</h2>"
+        markdown_text = f"<h2 style='color:white;'><b>{result}</b>!</h2>"
         st.markdown(markdown_text, unsafe_allow_html=True)
+
+#     st.success(result)
 
 
 if __name__ == "__main__":
