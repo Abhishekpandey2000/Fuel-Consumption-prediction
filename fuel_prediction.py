@@ -32,7 +32,7 @@ img = get_img_as_base64("image.jpg")
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://images.unsplash.com/photo-1489596162121-4a8e544d6de0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1412&q=80");
+background-image: url("https://c4.wallpaperflare.com/wallpaper/984/334/340/fire-blue-flames-minimalism-wallpaper-preview.jpg");
 background-size: 180%;
 background-position: top left;
 background-repeat: no-repeat;
