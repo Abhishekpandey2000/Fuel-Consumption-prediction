@@ -120,8 +120,8 @@ def main():
     # creating a button for prediction
     if st.button("Predict 🔍"):
         result = input_converter([Vehicle_class,Engine_size,Cylinders,Transmission,Co2_Rating,Fuel_type])
-
-    st.success(result)
+        markdown_text = f"<h2><b>{result}</b>!</h2>"
+        st.markdown(markdown_text, unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
