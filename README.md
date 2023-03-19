@@ -11,3 +11,5 @@ Chi-squared analysis | Scikit-learn | Streamlit | Teamwork
 
 # Techstack
 Pandas | Numpy | Scikit-learn | M.L. | Streamlit | Tableau
+
+Visit here 👉https://fuel-consumption-ratings.streamlit.app/
