@@ -20,19 +20,16 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 
 
-# img = get_img_as_base64("image.jpg")
 
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
 background-image: url("https://cdna.artstation.com/p/assets/images/images/028/796/598/large/christina-pigeon-movie006-1-moment.jpg?1595529009");
-background-size: 180%;
+background-size: 100%;
 background-position: top left;
 background-repeat: no-repeat;
 background-attachment: local;
 }}
-
-
 </style>
 """
 
