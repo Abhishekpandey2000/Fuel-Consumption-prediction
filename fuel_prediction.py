@@ -20,7 +20,7 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 
 
-img = get_img_as_base64("image.jpg")
+# img = get_img_as_base64("image.jpg")
 
 page_bg_img = f"""
 <style>
@@ -32,18 +32,7 @@ background-repeat: no-repeat;
 background-attachment: local;
 }}
 
-[data-testid="stSidebar"] > div:first-child {{
-background-image: url("data:image/png;base64,{img}");
-background-position: center; 
-background-repeat: no-repeat;
-background-attachment: fixed;
-}}
-[data-testid="stHeader"] {{
-background: rgba(0,0,0,0);
-}}
-[data-testid="stToolbar"] {{
-right: 2rem;
-}}
+
 </style>
 """
 
