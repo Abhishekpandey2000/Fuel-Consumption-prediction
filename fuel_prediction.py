@@ -37,15 +37,13 @@ page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
 background-image: url("https://c0.wallpaperflare.com/preview/161/498/431/black-concrete-road-during-nighttime-thumbnail.jpg");
-background-size: 100%;
+background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;
 background-attachment: local;
-filter: blur(5px);
 }}
 </style>
 """
-
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
