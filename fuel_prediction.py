@@ -36,7 +36,7 @@ def get_img_as_base64(file):
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://c4.wallpaperflare.com/wallpaper/886/739/579/purple-light-neon-lights-neon-wallpaper-preview.jpg");
+background-image: url("https://images.pexels.com/photos/3814729/pexels-photo-3814729.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
 background-size: 100%;
 background-position: top left;
 background-repeat: no-repeat;
