@@ -108,38 +108,22 @@ def main():
     
     
     Engine_size = st.number_input("Enter Engine Size (please enter value in this range[1-7])")
-#     css = """
-#         <style>
-#            .stNumberInput [data-testid='stMarkdownContainer'] {
-#                 color: white;
-                
-#             }
-            
-#         </style>
-#     """
-    st.markdown("""
+    css = """
         <style>
-        .css-14jk1r2 {
-            font-size: 30px !important;
-            font-weight: bold !important;
-        }
+           .stNumberInput [data-testid='stMarkdownContainer'] {
+                color: white;
+                
+            }
+            
         </style>
-    """, unsafe_allow_html=True)
-
-# Use st.number_input with the modified CSS
-    Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16])", min_value=1, max_value=16, key='cylinders', step=1, format="%d")
-    Transmission = st.selectbox("Select the Transmission", transmission)
-    Co2_Rating = st.number_input("Enter CO2 Rating (please enter value in this range[1-10])", min_value=1, max_value=10)
-    Fuel_type = st.selectbox("Select the Fuel type", fuel)
-
+    """
+        
+    st.write(css, unsafe_allow_html=True)
     
-    
-#     st.write(css, unsafe_allow_html=True)
-    
-#     Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16]",min_value = 1, max_value = 16)
-#     Transmission = st.selectbox("Select the Transmission",transmission)
-#     Co2_Rating = st.number_input("Enter CO2 Rating (please enter value in this range[1-10]",min_value = 1, max_value = 10)
-#     Fuel_type = st.selectbox("Select the Fuel type",fuel)
+    Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16]",min_value = 1, max_value = 16)
+    Transmission = st.selectbox("Select the Transmission",transmission)
+    Co2_Rating = st.number_input("Enter CO2 Rating (please enter value in this range[1-10]",min_value = 1, max_value = 10)
+    Fuel_type = st.selectbox("Select the Fuel type",fuel)
 
     # code for prediction
 
