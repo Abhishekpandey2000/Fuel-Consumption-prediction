@@ -120,7 +120,7 @@ def main():
     st.markdown("""
         <style>
         .css-14jk1r2 {
-            font-size: 24px !important;
+            font-size: 30px !important;
             font-weight: bold !important;
         }
         </style>
