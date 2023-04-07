@@ -119,15 +119,24 @@ def main():
     
     
     Engine_size = st.number_input("Enter Engine Size (please enter value in this range[1-7])")
-    css = """
-        <style>
-           .stNumberInput [data-testid='stMarkdownContainer'] {
-                color: white;
+#     css = """
+#         <style>
+#            .stNumberInput [data-testid='stMarkdownContainer'] {
+#                 color: white;
                 
-            }
+#             }
             
+#         </style>
+#     """
+    st.markdown("""
+        <style>
+        .css-1aumxhk {
+            font-size: 24px !important;
+            font-weight: bold !important;
+        }
         </style>
-    """
+    """, unsafe_allow_html=True)
+    
     
     st.write(css, unsafe_allow_html=True)
     
