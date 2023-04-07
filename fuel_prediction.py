@@ -25,7 +25,7 @@ def get_img_as_base64(file):
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://images.pexels.com/photos/3616594/pexels-photo-3616594.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
+background-image: url("https://images.pexels.com/photos/14405890/pexels-photo-14405890.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
 background-size: 100%;
 background-position: top left;
 background-repeat: no-repeat;
