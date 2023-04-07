@@ -24,8 +24,8 @@ def get_img_as_base64(file):
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://wallpapercrafter.com/th800/245197-a-long-exposure-shot-of-a-dark-empty-road-with-mot.jpg");
-background-size: 110%;
+background-image: url("https://c0.wallpaperflare.com/preview/161/498/431/black-concrete-road-during-nighttime-thumbnail.jpg");
+background-size: 100%;
 background-position: top left;
 background-repeat: no-repeat;
 background-attachment: local;
