@@ -138,7 +138,7 @@ def main():
     """, unsafe_allow_html=True)
     
     
-    st.write(css, unsafe_allow_html=True)
+#     st.write(css, unsafe_allow_html=True)
     
     Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16]",min_value = 1, max_value = 16)
     Transmission = st.selectbox("Select the Transmission",transmission)
