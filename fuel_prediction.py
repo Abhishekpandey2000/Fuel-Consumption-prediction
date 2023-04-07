@@ -25,7 +25,7 @@ def get_img_as_base64(file):
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://wallpapercave.com/wp/wp6696562.jpg");
+background-image: url("https://images.pexels.com/photos/9464228/pexels-photo-9464228.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
 background-size: 100%;
 background-position: top left;
 background-repeat: no-repeat;
