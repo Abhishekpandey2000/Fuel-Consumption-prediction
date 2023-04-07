@@ -21,17 +21,6 @@ def get_img_as_base64(file):
 
 
 
-# page_bg_img = f"""
-# <style>
-# [data-testid="stAppViewContainer"] > .main {{
-# background-image: url("https://c0.wallpaperflare.com/preview/161/498/431/black-concrete-road-during-nighttime-thumbnail.jpg");
-# background-size: 100%;
-# background-position: top left;
-# background-repeat: no-repeat;
-# background-attachment: local;
-# }}
-# </style>
-# """
 
 page_bg_img = f"""
 <style>
@@ -119,26 +108,26 @@ def main():
     
     
     Engine_size = st.number_input("Enter Engine Size (please enter value in this range[1-7])")
-#     css = """
-#         <style>
-#            .stNumberInput [data-testid='stMarkdownContainer'] {
-#                 color: white;
-                
-#             }
-            
-#         </style>
-#     """
-    st.markdown("""
+    css = """
         <style>
-        .css-1aumxhk {
-            font-size: 24px !important;
-            font-weight: bold !important;
-        }
+           .stNumberInput [data-testid='stMarkdownContainer'] {
+                color: white;
+                
+            }
+            
         </style>
-    """, unsafe_allow_html=True)
+    """
+#     st.markdown("""
+#         <style>
+#         .css-1aumxhk {
+#             font-size: 24px !important;
+#             font-weight: bold !important;
+#         }
+#         </style>
+#     """, unsafe_allow_html=True)
     
     
-#     st.write(css, unsafe_allow_html=True)
+    st.write(css, unsafe_allow_html=True)
     
     Cylinders = st.number_input("Enter number of Cylinders (please enter value in this range[1-16]",min_value = 1, max_value = 16)
     Transmission = st.selectbox("Select the Transmission",transmission)
