@@ -36,7 +36,7 @@ def get_img_as_base64(file):
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://c0.wallpaperflare.com/preview/161/498/431/black-concrete-road-during-nighttime-thumbnail.jpg");
+background-image: url("https://c4.wallpaperflare.com/wallpaper/886/739/579/purple-light-neon-lights-neon-wallpaper-preview.jpg");
 background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;
