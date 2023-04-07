@@ -37,7 +37,7 @@ page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
 background-image: url("https://images.pexels.com/photos/4112711/pexels-photo-4112711.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
-background-size: 100%;
+background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;
 background-attachment: local;
