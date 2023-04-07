@@ -25,7 +25,7 @@ page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
 background-image: url("https://wallpapercrafter.com/th800/245197-a-long-exposure-shot-of-a-dark-empty-road-with-mot.jpg");
-background-size: 100%;
+background-size: 110%;
 background-position: top left;
 background-repeat: no-repeat;
 background-attachment: local;
