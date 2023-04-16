@@ -25,7 +25,7 @@ def get_img_as_base64(file):
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://images.hdqwalls.com/download/golden-gasoline-desert-gas-station-xn-1360x768.jpg");
+background-image: url("https://cdnb.artstation.com/p/assets/images/images/041/730/001/large/djordje-dundjer-screenshot-118.jpg?1632506807");
 background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;
