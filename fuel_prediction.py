@@ -25,7 +25,7 @@ def get_img_as_base64(file):
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://wallpapercave.com/wp/wp6696562.jpg");
+background-image: url("https://images.hdqwalls.com/download/golden-gasoline-desert-gas-station-xn-1360x768.jpg");
 background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;
