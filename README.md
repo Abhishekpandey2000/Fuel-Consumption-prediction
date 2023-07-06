@@ -1,4 +1,4 @@
-[# Fuel-Consumption-prediction
+# Fuel-Consumption-prediction
 - Developed an M.L. model to predict fuel consumption.
 - Pandas to import and sanitize the dataset.
 - Matplotlib, Seaborn & Numpy for EDA.
@@ -13,4 +13,3 @@ Chi-squared analysis | Scikit-learn | Streamlit | Teamwork
 Pandas | Numpy | Scikit-learn | M.L. | Streamlit | Tableau
 
 Visit here 👉https://fuel-consumption-prediction.streamlit.app/
-](https://fuel-consumption-prediction.streamlit.app/)https://fuel-consumption-prediction.streamlit.app/
