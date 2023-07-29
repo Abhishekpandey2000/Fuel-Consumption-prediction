@@ -13,7 +13,7 @@ scaled_data = pk.load(
 
 
 
-@st.cache_data(allow_output_mutation=True)
+@st.cache
 def get_img_as_base64(file):
     with open(file, "rb") as f:
         data = f.read()
